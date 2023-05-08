@@ -19,7 +19,8 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 classes = {"Amenity": Amenity, "City": City,
            "Place": Place, "Review": Review, "State": State, "User": User}
 
-
+"""DBSTORAGE CLASS CURRENTLY RETURNING AN ERROR THAT READS Get doesnt
+retrieve all State in storage"""
 class DBStorage:
     """interaacts with the MySQL database"""
     __engine = None
@@ -75,6 +76,8 @@ class DBStorage:
         """call remove() method on the private session attribute"""
         self.__session.remove()
 
+    """Error: Correct output for get with DBStorage and
+    Object existing"""
     def get(self, cls, id):
         """ return the specified object by id
         """
@@ -85,6 +88,8 @@ class DBStorage:
                     return (elem)
         return (None)
 
+    """Error: Correct output for count with DBStorage and 4
+    objects stored"""
     def count(self, cls=None):
         """ return number of specified class
         """

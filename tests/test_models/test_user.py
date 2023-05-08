@@ -57,6 +57,7 @@ class TestUserDocs(unittest.TestCase):
             self.assertTrue(len(func[1].__doc__) >= 1,
                             "{:s} method needs a docstring".format(func[0]))
 
+
 @unittest.skipIf(getenv("HBNB_TYPE_STORAGE") == 'db', "not testing db storage")
 class TestUser(unittest.TestCase):
     """Test the User class"""
